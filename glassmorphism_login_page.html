@@ -1,0 +1,133 @@
+<html>
+<head>
+<title> Glassmorphism </title>
+<style type="text/css">
+:root
+{
+  --white:rgba(255,255,255,0.35);
+  --light:rgba(255,255,255,0.45);
+  --dark:rgba(255,255,255,0.75);
+}
+
+body
+{
+  background-image: linear-gradient(-45deg, #6E32FF, #22F5C6);
+  height: 100vh;
+}
+
+.container
+{
+  position:absolute;
+  tramsform:translate(-50%,-50%);
+  top:50%;
+  left:50%;
+}
+
+form {
+  background: var(--white);
+  padding: 2.6em;
+  height: 250px;
+  width: 400px;
+  margin-top: 10%;
+  margin-left:33.5%;
+  border-radius: 35px;
+  border-right: 2.5px solid var(--light);
+  border-bottom: 2.5px solid var(--light);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.24);
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+input
+{
+    background:transparent;
+    width: 200px;
+    padding: 1em;
+    margin-bottom: 1.3em;
+    border: none;
+    border-left: 1px solid var(--light);
+    border-top: 1px solid var(--light);
+    border-radius: 300px;
+    backdrop-filter: blur(6px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.24);
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.24);
+}
+input:focus,input:active
+{
+  outline: none;
+  color: #7146A6;
+  text-shadow: none;
+}
+
+p
+{
+    font-weight: 200;
+    opacity: 0.68;
+    font-size: 1.27rem;
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.24);
+}
+
+a
+{
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 10.8px;
+}
+a:hover
+{
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.24);
+}
+a:active
+{
+  text-shadow: none;
+}
+</style>
+<script type="text/javascript">
+document.getElementById("but").style.cursor = "pointer";
+
+addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("but").click();
+  }
+});
+
+function check()
+{
+  var pass="hello";
+  var pass2=document.getElementById('pass').value;
+  if(pass2!=0)
+  {
+  if(pass2===pass)
+    {
+      alert("Logged In")
+    }
+  else alert("oops..! wrong password");
+  }
+  else alert("please enter a valid password..!");
+}
+</script>
+<body>
+  <div id="container">
+    <form>
+      <p> Please Enter Your Credentials </p>
+      <input type="email" placeholder="Email"\><br>
+      <input type="password" id="pass" placeholder="Password is : 'hello' "\><br>
+      <input type="button" id="but" value="SIGN IN" onclick="check()"\><br>
+      <a href="#">Forgot Password ?</a>
+    </form>
+    <div class="droplets">
+     <div id="one"> </div>
+     <div id="two"> </div>
+     <div id="three"> </div>
+    </div>
+  </div>
+</body>
+</html>
